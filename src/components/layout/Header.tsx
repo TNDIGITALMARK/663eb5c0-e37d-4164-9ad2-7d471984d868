@@ -15,14 +15,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full bg-black text-white fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-6 py-4">
+    <header className="w-full bg-black text-white fixed top-0 left-0 right-0 z-50 border-b border-white/10">
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-all duration-300">
             <div className="flex items-center">
               {/* Monogram Icon - Simple AS design */}
-              <div className="w-8 h-8 border border-white flex items-center justify-center">
+              <div className="w-9 h-9 border-[1.5px] border-white flex items-center justify-center transition-all duration-300 hover:bg-white hover:text-black">
                 <span className="font-serif text-sm font-light">AS</span>
               </div>
               <span className="ml-3 font-serif text-lg tracking-[0.2em] font-light">
@@ -32,15 +32,19 @@ export default function Header() {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`
-                  text-xs tracking-[0.2em] font-medium transition-all
-                  hover:opacity-70
-                  ${pathname === link.href ? 'opacity-100' : 'opacity-90'}
+                  text-xs tracking-[0.2em] font-medium transition-all duration-300 relative
+                  hover:opacity-100
+                  ${pathname === link.href ? 'opacity-100' : 'opacity-80'}
+                  before:content-[''] before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-[1px] before:bg-white
+                  before:transition-all before:duration-300
+                  hover:before:w-full
+                  ${pathname === link.href ? 'before:w-full' : ''}
                 `}
               >
                 {link.label}
@@ -49,9 +53,9 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white">
+          <button className="md:hidden text-white hover:opacity-70 transition-opacity">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
