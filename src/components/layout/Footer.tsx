@@ -18,7 +18,7 @@ export default function Footer() {
                 AURORA & SAGE
               </span>
             </div>
-            <p className="text-sm opacity-80 max-w-md leading-relaxed mb-6">
+            <p className="text-sm opacity-90 max-w-md leading-relaxed mb-6">
               Where storytelling meets style. Discover literary works and fashion designs from a unified creative vision.
             </p>
             <div className="w-16 h-px bg-white/30"></div>
@@ -28,10 +28,10 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.2em] font-semibold mb-6 uppercase opacity-90">Explore</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/books" className="opacity-70 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Books</Link></li>
-              <li><Link href="/fashion" className="opacity-70 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Fashion</Link></li>
-              <li><Link href="/about" className="opacity-70 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">About</Link></li>
-              <li><Link href="/blog" className="opacity-70 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Blog</Link></li>
+              <li><Link href="/books" className="opacity-85 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Books</Link></li>
+              <li><Link href="/fashion" className="opacity-85 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Fashion</Link></li>
+              <li><Link href="/about" className="opacity-85 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">About</Link></li>
+              <li><Link href="/blog" className="opacity-85 hover:opacity-100 transition-all duration-300 inline-block hover:translate-x-1">Blog</Link></li>
             </ul>
           </div>
 
@@ -39,13 +39,13 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-[0.2em] font-semibold mb-6 uppercase opacity-90">Connect</h4>
             <div className="flex gap-4 mb-8">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-85 hover:opacity-100 transition-all duration-300 hover:scale-110">
                 <Instagram size={22} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="opacity-85 hover:opacity-100 transition-all duration-300 hover:scale-110">
                 <Twitter size={22} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-85 hover:opacity-100 transition-all duration-300 hover:scale-110">
                 <Facebook size={22} />
               </a>
             </div>
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-70">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-80">
           <p>&copy; {new Date().getFullYear()} Aurora & Sage. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="/privacy" className="hover:opacity-100 transition-opacity duration-300">Privacy Policy</Link>

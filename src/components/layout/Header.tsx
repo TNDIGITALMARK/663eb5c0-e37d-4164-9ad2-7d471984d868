@@ -40,7 +40,7 @@ export default function Header() {
                 className={`
                   text-xs tracking-[0.2em] font-medium transition-all duration-300 relative
                   hover:opacity-100
-                  ${pathname === link.href ? 'opacity-100' : 'opacity-80'}
+                  ${pathname === link.href ? 'opacity-100' : 'opacity-90'}
                   before:content-[''] before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-[1px] before:bg-white
                   before:transition-all before:duration-300
                   hover:before:w-full

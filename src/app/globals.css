@@ -18,12 +18,13 @@ Pixel-Perfect Design Reference Implementation
 
   /* Primary Colors - Black & White Foundation */
   --background: 0 0% 100%;           /* Pure white #FFFFFF */
-  --foreground: 0 0% 20%;            /* Text dark #333333 */
+  --foreground: 0 0% 15%;            /* Text darker #262626 - improved contrast */
 
   /* Brand Colors from Reference */
   --cream-bg: 43 20% 95%;            /* Cream/Beige #F5F3EF - hero background */
   --gold-accent: 43 74% 53%;         /* Gold #D4AF37 - decorative elements */
   --pure-black: 0 0% 0%;             /* Black #000000 - header, footer, buttons */
+  --text-on-cream: 0 0% 20%;         /* Darker text for cream backgrounds - better contrast */
 
   /* Card & Surface Colors */
   --card: 0 0% 100%;
@@ -43,7 +44,7 @@ Pixel-Perfect Design Reference Implementation
 
   /* Muted: Subtle gray tones */
   --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
+  --muted-foreground: 0 0% 35%;        /* Darker for better readability */
 
   /* Accent: Gold from reference */
   --accent: 43 74% 53%;
@@ -221,7 +222,7 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.8;                    /* Improved line height for readability */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -288,8 +289,9 @@ h6 {
 p {
   margin-bottom: 1.25rem;
   margin-top: 0;
-  line-height: 1.75;
+  line-height: 1.8;
   color: hsl(var(--foreground));
+  font-size: 1rem;                     /* Explicit size for consistency */
 }
 
 p:last-child {

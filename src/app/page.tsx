@@ -11,67 +11,89 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section - Split Screen Design */}
-      <section className="w-full min-h-screen flex flex-col md:flex-row mt-16">
-        {/* Left Side - Books/Literary */}
-        <div className="w-full md:w-1/2 bg-[hsl(var(--cream-bg))] flex items-center justify-center px-6 md:px-12 lg:px-16 py-24 md:py-0">
-          <div className="max-w-md text-center fade-in">
-            {/* Book Cover */}
-            <div className="mb-10">
-              <div className="inline-block shadow-book hover-lift">
-                <Image
-                  src={books[0].coverImage}
-                  alt={books[0].title}
-                  width={300}
-                  height={450}
-                  className="w-64 h-auto image-book"
-                />
-              </div>
-            </div>
-
-            {/* Tagline */}
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-4 text-black">
-              Stories that inspire
-            </h2>
-            <div className="section-divider section-divider-dark"></div>
-            <p className="text-base text-gray-700 mb-10 font-light leading-relaxed">
-              Discover literary works that transport, challenge, and illuminate
-            </p>
-
-            {/* CTA */}
-            <Link href="/books" className="btn-primary inline-block">
-              Explore My Books
-            </Link>
-          </div>
-        </div>
-
-        {/* Right Side - Fashion */}
-        <div className="w-full md:w-1/2 bg-black flex items-center justify-center px-6 md:px-12 lg:px-16 py-24 md:py-0 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src="/generated/fashion-hero-monochrome.png"
-              alt="Fashion"
-              fill
-              className="object-cover image-bw opacity-60 transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-
-          <div className="relative z-10 max-w-md text-center text-white fade-in">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              WHERE<br />
-              STORYTELLING<br />
+      {/* Hero Section - Unified Centered Design */}
+      <section className="w-full min-h-screen flex items-center justify-center bg-[hsl(var(--cream-bg))] mt-16 px-6 py-24 md:py-32">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center fade-in">
+            {/* Main Headline */}
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl mb-8 leading-tight tracking-tight">
+              WHERE STORYTELLING<br />
               MEETS STYLE
             </h1>
 
-            <div className="section-divider mx-auto" style={{background: 'rgba(255,255,255,0.4)'}}></div>
+            {/* Elegant Divider */}
+            <div className="section-divider section-divider-dark mx-auto"></div>
 
-            <p className="text-lg md:text-xl mb-10 font-light leading-relaxed">
-              Designs that express creativity,<br />crafted with intention
+            {/* Tagline */}
+            <p className="text-lg md:text-xl lg:text-2xl mb-16 font-light leading-relaxed max-w-3xl mx-auto" style={{color: 'hsl(var(--text-on-cream))'}}>
+              Discover literary works that transport and illuminate, alongside fashion designs that express creativity crafted with intention
             </p>
 
-            <Link href="/fashion" className="btn-primary inline-block border-white text-white hover:bg-white hover:text-black">
-              Shop My Clothing Brand
-            </Link>
+            {/* Dual CTAs */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+              <Link href="/books" className="btn-primary inline-block min-w-[220px]">
+                Explore My Books
+              </Link>
+              <Link href="/fashion" className="btn-primary inline-block min-w-[220px]">
+                Shop My Fashion
+              </Link>
+            </div>
+
+            {/* Visual Showcase - Unified Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto mt-16">
+              {/* Featured Book */}
+              <div className="fade-in group" style={{animationDelay: '0.2s'}}>
+                <div className="mb-6 inline-block">
+                  <Image
+                    src={books[0].coverImage}
+                    alt={books[0].title}
+                    width={280}
+                    height={420}
+                    className="w-56 h-auto image-book shadow-book hover-lift mx-auto"
+                  />
+                </div>
+                <h3 className="font-serif text-xl mb-2" style={{color: 'hsl(var(--text-on-cream))'}}>
+                  Latest Literary Work
+                </h3>
+                <p className="text-sm font-medium opacity-80" style={{color: 'hsl(var(--text-on-cream))'}}>
+                  {books[0].title}
+                </p>
+              </div>
+
+              {/* Brand Philosophy - Center */}
+              <div className="fade-in flex flex-col justify-center" style={{animationDelay: '0.3s'}}>
+                <div className="py-8">
+                  <div className="w-12 h-12 border-2 border-black flex items-center justify-center mx-auto mb-6">
+                    <span className="font-serif text-lg">AS</span>
+                  </div>
+                  <h3 className="font-serif text-2xl mb-4" style={{color: 'hsl(var(--text-on-cream))'}}>
+                    Aurora & Sage
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{color: 'hsl(var(--text-on-cream))'}}>
+                    A unified creative vision blending the art of storytelling with contemporary fashion design
+                  </p>
+                </div>
+              </div>
+
+              {/* Featured Fashion */}
+              <div className="fade-in group" style={{animationDelay: '0.4s'}}>
+                <div className="mb-6 overflow-hidden">
+                  <Image
+                    src={fashionProducts[0].images[0]}
+                    alt={fashionProducts[0].name}
+                    width={280}
+                    height={280}
+                    className="w-56 h-56 image-product image-bw shadow-md hover-lift mx-auto transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="font-serif text-xl mb-2" style={{color: 'hsl(var(--text-on-cream))'}}>
+                  Fashion Collection
+                </h3>
+                <p className="text-sm font-medium opacity-80" style={{color: 'hsl(var(--text-on-cream))'}}>
+                  {fashionProducts[0].name}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -83,7 +105,7 @@ export default function HomePage() {
             Where storytelling meets style
           </h2>
           <div className="section-divider section-divider-dark"></div>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-600 leading-relaxed">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style={{color: 'hsl(var(--muted-foreground))'}}>
             {authorBio.bio}
           </p>
         </div>
@@ -96,7 +118,7 @@ export default function HomePage() {
             Featured Collections
           </h2>
           <div className="section-divider section-divider-dark"></div>
-          <p className="text-center text-gray-600 mb-16 max-w-xl mx-auto">
+          <p className="text-center mb-16 max-w-xl mx-auto" style={{color: 'hsl(var(--muted-foreground))'}}>
             Explore curated selections from our literary and fashion collections
           </p>
 
@@ -123,7 +145,7 @@ export default function HomePage() {
                         <h4 className="font-serif text-base font-semibold mb-2 group-hover:opacity-70 transition-opacity">
                           {book.title}
                         </h4>
-                        <p className="text-sm text-gray-600 mb-3 leading-relaxed">{book.subtitle}</p>
+                        <p className="text-sm mb-3 leading-relaxed" style={{color: 'hsl(var(--muted-foreground))'}}>{book.subtitle}</p>
                         <p className="text-sm font-semibold">${book.price}</p>
                       </div>
                     </div>
@@ -194,7 +216,7 @@ export default function HomePage() {
             About the Creator
           </h2>
           <div className="section-divider section-divider-dark"></div>
-          <p className="text-center text-gray-600 mb-16 max-w-xl mx-auto">
+          <p className="text-center mb-16 max-w-xl mx-auto" style={{color: 'hsl(var(--text-on-cream))'}}>
             The creative vision behind both literature and fashion
           </p>
 
@@ -211,9 +233,9 @@ export default function HomePage() {
 
             <div className="fade-in" style={{animationDelay: '0.2s'}}>
               <h3 className="font-serif text-2xl md:text-3xl mb-3">{authorBio.name}</h3>
-              <p className="text-lg md:text-xl mb-6 font-medium text-gray-700">{authorBio.title}</p>
+              <p className="text-lg md:text-xl mb-6 font-medium" style={{color: 'hsl(var(--text-on-cream))'}}>{authorBio.title}</p>
               <div className="w-12 h-px bg-black mb-6"></div>
-              <p className="text-gray-700 mb-8 leading-relaxed text-base md:text-lg">
+              <p className="mb-8 leading-relaxed text-base md:text-lg" style={{color: 'hsl(var(--text-on-cream))'}}>
                 {authorBio.bio}
               </p>
               <Link href="/about" className="btn-primary inline-block">
